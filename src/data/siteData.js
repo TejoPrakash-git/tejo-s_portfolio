@@ -2,10 +2,10 @@ export const personal = {
   name: 'Tejo Prakash',
   surname: 'Madabathula',
   tagline: 'Prompting is my Programming.',
-  role: 'Full Stack Developer & AI Integrator',
+  role: 'Full Stack Web & App Developer',
   location: 'Visakhapatnam, India',
   available: true,
-  email: 'tejoprakash@email.com',
+  email: 'tejohere6@gmail.com',
   github: 'https://github.com/TejoPrakash-git',
   linkedin: 'https://linkedin.com/in/m-tejo-prakash-32897232a',
   about: [
