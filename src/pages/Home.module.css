@@ -1,0 +1,264 @@
+/* ── HERO ──────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 24px 80px;
+}
+
+.dotGrid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(201, 168, 76, 0.12) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, black, transparent);
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, black, transparent);
+  pointer-events: none;
+}
+
+.orb1 {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.08), transparent 70%);
+  top: -200px;
+  left: -180px;
+  pointer-events: none;
+  animation: floatOrb 22s ease-in-out infinite alternate;
+}
+
+.orb2 {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 201, 106, 0.06), transparent 70%);
+  bottom: 0;
+  right: -100px;
+  pointer-events: none;
+  animation: floatOrb 18s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatOrb {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(40px, 50px) scale(1.08); }
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border: 1px solid var(--gold-border);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--gold-light);
+  background: var(--gold-dim);
+  margin-bottom: 36px;
+  animation: fadeUp 0.6s var(--ease-out) both;
+}
+
+.badgePulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.75); }
+}
+
+/* Name */
+.heroName {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin-bottom: 28px;
+  animation: fadeUp 0.65s 0.1s var(--ease-out) both;
+}
+
+.nameAccent {
+  display: block;
+}
+
+.nameSurname {
+  display: block;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* Scramble */
+.scrambleWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  animation: fadeUp 0.65s 0.18s var(--ease-out) both;
+}
+
+.scrambleCaret {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+.scramble {
+  font-family: var(--font-mono);
+  font-size: clamp(0.9rem, 2.2vw, 1.15rem);
+  color: var(--text-secondary);
+  min-width: 260px;
+  text-align: left;
+}
+
+.heroRole {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 44px;
+  animation: fadeUp 0.65s 0.24s var(--ease-out) both;
+}
+
+/* Buttons */
+.heroBtns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 0.65s 0.3s var(--ease-out) both;
+}
+
+/* Scroll hint */
+.scrollHint {
+  position: absolute;
+  bottom: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  animation: fadeUp 1s 0.6s var(--ease-out) both;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 52px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: dropLine 2.2s ease-in-out infinite;
+  transform-origin: top;
+}
+
+@keyframes dropLine {
+  0%   { transform: scaleY(0); opacity: 0; }
+  50%  { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── LOGO LOOP ──────────────────────────────────── */
+.loopSection {
+  padding: 0 0 var(--space-xl);
+}
+
+.loopLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ── PROJECTS ───────────────────────────────────── */
+.projectsSection {
+  padding: var(--space-3xl) 0;
+}
+
+.allProjects {
+  display: flex;
+  justify-content: center;
+  margin-top: 44px;
+}
+
+/* ── STRIP ──────────────────────────────────────── */
+.strip {
+  max-width: 1140px;
+  margin: 0 auto var(--space-3xl);
+  padding: 0 var(--space-lg);
+}
+
+.stripInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 28px 40px;
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-xl);
+  background: var(--gold-glow);
+  backdrop-filter: blur(12px);
+}
+
+.stripText {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stripDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+.stripText p {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+  .stripInner { flex-direction: column; text-align: center; padding: 24px; }
+  .stripText  { flex-direction: column; gap: 8px; }
+}

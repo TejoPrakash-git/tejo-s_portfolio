@@ -1,0 +1,229 @@
+.page {
+  padding-top: 100px;
+  padding-bottom: var(--space-3xl);
+}
+
+.header {
+  padding: var(--space-3xl) 0 var(--space-xl);
+}
+
+.pageTitle {
+  margin-bottom: 0 !important;
+}
+
+/* ── GRID ── */
+.mainSection {
+  padding-top: var(--space-lg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── INFO COL ── */
+.infoText {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 40px;
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  cursor: none;
+  transition: all 0.25s var(--ease-out);
+  backdrop-filter: blur(12px);
+}
+
+.socialLink:hover {
+  border-color: var(--gold-border);
+  background: var(--bg-card-hover);
+  transform: translateX(5px);
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.socialText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.socialLabel {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.socialSub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.socialArrow {
+  font-size: 16px;
+  color: var(--text-muted);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.socialLink:hover .socialArrow {
+  color: var(--gold);
+  transform: translate(2px, -2px);
+}
+
+.resumeBtn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ── FORM CARD ── */
+.formCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  backdrop-filter: blur(16px);
+}
+
+.formTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  color: var(--text-primary);
+}
+
+.formGroup {
+  margin-bottom: 22px;
+}
+
+.formLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 13px 16px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  border-color: var(--gold-border);
+}
+
+.formTextarea {
+  min-height: 130px;
+}
+
+.formSubmit {
+  width: 100%;
+  padding: 15px;
+  background: var(--gold);
+  color: #080808;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: none;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.2s, opacity 0.2s;
+}
+
+.formSubmit:hover:not(:disabled) {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.formSubmit:disabled {
+  opacity: 0.6;
+}
+
+/* Success */
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 16px;
+  text-align: center;
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--gold);
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.successText {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 820px) {
+  .grid { grid-template-columns: 1fr; gap: 48px; }
+}
