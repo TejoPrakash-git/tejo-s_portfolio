@@ -39,3 +39,9 @@
   height: 52px;
   border-color: rgba(201, 168, 76, 0.5);
 }
+
+@media (pointer: coarse), (hover: none), (max-width: 768px) {
+  .dot, .ring {
+    display: none !important;
+  }
+}

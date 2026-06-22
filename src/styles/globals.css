@@ -259,3 +259,15 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ─── TOUCH DEVICE OVERRIDES ─────────────────────── */
+@media (pointer: coarse), (hover: none), (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
+  
+  a, button, .btn, .link, .cta, .themeToggle, .hamburger, .socialLink, [role="button"] {
+    cursor: pointer !important;
+  }
+}
+
